@@ -12,12 +12,9 @@ def input_to_index(user_input)
 end
 
 def valid_move?(board,position)
-  if  position.to_i.between?(1,9) && position_taken?
+  if  position.to_i.between?(0,8) && position_taken?
     true
   else
      false
   end
 end
-
-
-
