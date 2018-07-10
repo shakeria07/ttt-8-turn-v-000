@@ -32,12 +32,4 @@ def position_taken?(board,position)
   end
 end
 
-index = 0
-expect(valid_move?(board, index)).to be_truthy
 
-index = 4
-expect(valid_move?(board, index)).to be_falsey
-
-index = -1
-expect(valid_move?(board, index)).to be_falsey
-end
