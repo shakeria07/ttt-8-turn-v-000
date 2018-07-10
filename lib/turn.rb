@@ -12,22 +12,11 @@ def input_to_index(user_input)
 end
 
 def valid_move?(board,position)
-  if  position.to_i.between?(0,8) && position_taken?
-    true
-  else
-     false
-  end
+  position.to_i.between?(0,8) and not position_taken?(board, position.to_i - 1)
 end
 
 def position_taken?(board,position)
-  if board[position] == " "
-    false
-    elsif board[position] == ""
-    false
-    elsif  board[position] == nil
-    false
-    else   board[position] == "X" || "O"
-    true
-
-  end
+  return false if [" ", "", nil].include?(board[position])
+  return true if ["X", "O"].include?(board[position])
+  raise "#{board[position]} is not a valid move"
 end
